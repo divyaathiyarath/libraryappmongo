@@ -6,7 +6,8 @@ var mongoose=require('mongoose');
 var bodyparser=require('body-parser');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
-mongoose.connect("mongodb://localhost:27017/librarydb");
+// mongoose.connect("mongodb://localhost:27017/librarydb");
+mongoose.connect("mongodb+srv://mongodb:mongodb@mycluster-rfooj.mongodb.net/test?retryWrites=true&w=majority");
 var LibraryModel=mongoose.model("library",{
     title:String,
     author:String,
