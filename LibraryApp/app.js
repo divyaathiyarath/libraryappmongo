@@ -219,7 +219,9 @@ app.get('/index',(req,res)=>{
 });
 app.get('/books',(req,res)=>{
     
-    const readbook="http://localhost:3000/getdataApi";
+  //  const readbook="http://localhost:3000/getdataApi";
+  const readbook="https://libraryappdivyaict.herokuapp.com/getdataApi";
+
     request(readbook,(error,response,body)=>
 {
    var books=JSON.parse(body);
@@ -231,7 +233,8 @@ app.get('/books',(req,res)=>{
 app.get('/booksingle/:id',(req,res)=>{
 
     const x=req.params.id;
-    const readbook="http://localhost:3000/getsinglebookApi/"+x;
+   // const readbook="http://localhost:3000/getsinglebookApi/"+x;
+   const readbook="https://libraryappdivyaict.herokuapp.com/getsinglebookApi/"+x;
     request(readbook,(error,response,body)=>
 {
    var books=JSON.parse(body);
@@ -243,7 +246,9 @@ app.get('/booksingle/:id',(req,res)=>{
 });
 app.get('/authors',(req,res)=>{
     // 
-    const authorlink="http://localhost:3000/getauthorApi";
+   // const authorlink="http://localhost:3000/getauthorApi";
+   const authorlink="https://libraryappdivyaict.herokuapp.com/getauthorApi";
+   
     request(authorlink,(error,response,body)=>{
         var authors=JSON.parse(body);
         if(error)
@@ -259,7 +264,9 @@ app.get('/authors',(req,res)=>{
 app.get('/authorsingle/:id',(req,res)=>{
 
     const x=req.params.id;
-    const readauthor="http://localhost:3000/getsingleauthorApi/"+x;
+//  const readauthor="http://localhost:3000/getsingleauthorApi/"+x;
+const readauthor="https://libraryappdivyaict.herokuapp.com/getsingleauthorApi/"+x;
+
     request(readauthor,(error,response,body)=>
 {
    var authors=JSON.parse(body);
